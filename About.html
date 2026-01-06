@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Bright Future Secondary School</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .school-color-primary {
+            background-color: #1e40af;
+        }
+        .school-color-secondary {
+            background-color: #0ea5e9;
+        }
+        .school-color-accent {
+            background-color: #f59e0b;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .image-hover {
+            transition: transform 0.3s ease;
+        }
+        .image-hover:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="school-color-primary text-white p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <i class="fas fa-graduation-cap mr-2"></i>
+                Bright Future Secondary School
+            </div>
+            <div class="space-x-6 hidden md:flex">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="About.html" class="text-yellow-300 font-semibold">About us</a>
+                <a href="academics.html" class="hover:text-yellow-300">Academics</a>
+                <a href="admission.html" class="hover:text-yellow-300">Admissions</a>
+                <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden mt-4 pb-2" id="mobileMenu">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="hover:text-yellow-300 py-2">Home</a>
+                <a href="about.html" class="text-yellow-300 font-semibold py-2">About us</a>
+                <a href="academics.html" class="hover:text-yellow-300 py-2">Academics</a>
+                <a href="admissions.html" class="hover:text-yellow-300 py-2">Admissions</a>
+                <a href="contact.html" class="hover:text-yellow-300 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="school-color-secondary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">About Our School</h1>
+            <p class="text-xl max-w-3xl mx-auto">Discover our story, mission, and the values that shape the education at Bright Future Secondary School.</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="#history" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-6 rounded-full transition duration-300">
+                    Our History
+                </a>
+                <a href="#mission" class="bg-white/30 hover:bg-white/40 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    Mission & Vision
+                </a>
+                <a href="#values" class="bg-white/30 hover:bg-white/40 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    Our Values
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- School Story -->
+        <section id="history" class="mb-16 fade-in">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl image-hover">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1400&q=80" 
+                             alt="Bright Future Campus" 
+                             class="w-full h-96 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                            <p class="text-white text-sm">A vibrant campus where learning and community thrive</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Our Story</h2>
+                    <div class="space-y-4 text-gray-700">
+                        <p>Bright Future started as a neighbourhood school with a simple promise: excellent teaching, strong values, and opportunities for every student. Today we blend modern facilities with a close-knit community to give students the confidence to succeed.</p>
+                        <p>Over the years we've expanded our programs while keeping a focus on student wellbeing, creativity, and real-world skills. Our alumni lead in business, science, arts and public service — proof that a supportive school environment makes a lasting difference.</p>
+                        <p>We continue to invest in teachers, technology, and facilities so every student can discover their strengths and prepare for the future.</p>
+                    </div>
+                    <div class="mt-8 grid grid-cols-2 gap-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="text-3xl font-bold text-blue-700 mb-2">1995</div>
+                            <p class="text-gray-600">Established</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="text-3xl font-bold text-blue-700 mb-2">1,200+</div>
+                            <p class="text-gray-600">Students & Families</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="text-3xl font-bold text-blue-700 mb-2">28+</div>
+                            <p class="text-gray-600">Years of Service</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="text-3xl font-bold text-blue-700 mb-2">95%</div>
+                            <p class="text-gray-600">Graduate Placement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section id="mission" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Mission & Vision</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">We prepare learners for life — academically curious, socially responsible, and ready for tomorrow's challenges.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl shadow-xl p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                    <p>Deliver an inclusive, high-quality education that inspires critical thinking, creativity, and integrity. We support each student's growth through engaging teaching, mentorship, and real-world learning opportunities.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-700 to-cyan-500 rounded-2xl shadow-xl p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+                    <p>To be a community where every young person discovers purpose, builds skill, and contributes positively to society — locally and globally.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values -->
+        <section id="values" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Core Values</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Respect, curiosity, resilience, and community guide everything we do.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-600">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-star text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Excellence</h3>
+                    <p class="text-gray-600">We pursue high standards in teaching, learning and service.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-green-600">
+                    <div class="text-green-600 mb-4">
+                        <i class="fas fa-heart text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Integrity</h3>
+                    <p class="text-gray-600">We act honestly, fairly and with compassion.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-600">
+                    <div class="text-yellow-600 mb-4">
+                        <i class="fas fa-users text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Community</h3>
+                    <p class="text-gray-600">We build strong partnerships between students, families and staff.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-purple-600">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-lightbulb text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Innovation</h3>
+                    <p class="text-gray-600">We encourage creative problem-solving and continuous improvement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campus Life -->
+        <section class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Campus Life</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Learning beyond the classroom — clubs, sports, arts and leadership opportunities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative rounded-xl overflow-hidden shadow-lg group image-hover">
+                    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80" 
+                         alt="Laboratory" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Hands-on Science</h3>
+                            <p class="text-sm">Active labs that inspire inquiry and discovery.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden shadow-lg group image-hover">
+                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=900&q=80" 
+                         alt="Classroom" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Engaged Classrooms</h3>
+                            <p class="text-sm">Collaborative learning with modern technology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative rounded-xl overflow-hidden shadow-lg group image-hover">
+                    <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=900&q=80" 
+                         alt="Sports" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-xl font-bold mb-2">Sports & Wellness</h3>
+                            <p class="text-sm">Team sports and wellbeing programs for all students.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team -->
+        <section class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Leadership</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Experienced educators focused on student success.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" 
+                             alt="Director" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-1">Dr. Sarah Johnson</h3>
+                        <p class="text-blue-600 font-semibold mb-3">Director</p>
+                        <p class="text-gray-600 text-sm">Leads school vision, curriculum and community partnerships.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1545996124-1f3a7f9d5f0f?auto=format&fit=crop&w=600&q=80" 
+                             alt="Academic Dean" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-1">Mr. David Chen</h3>
+                        <p class="text-blue-600 font-semibold mb-3">Academic Dean</p>
+                        <p class="text-gray-600 text-sm">Oversees teaching standards and student achievement.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1548155200-41f0d1a2d2f7?auto=format&fit=crop&w=600&q=80" 
+                             alt="Student Affairs" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-1">Mrs. Amina Okoro</h3>
+                        <p class="text-blue-600 font-semibold mb-3">Student Affairs Director</p>
+                        <p class="text-gray-600 text-sm">Focuses on wellbeing, counseling and extracurricular programs.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544005316-0f6d7b3f0d3a?auto=format&fit=crop&w=600&q=80" 
+                             alt="Operations" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-1">Mr. Robert Williams</h3>
+                        <p class="text-blue-600 font-semibold mb-3">Head of Operations</p>
+                        <p class="text-gray-600 text-sm">Ensures safe, efficient and welcoming campus facilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer class="school-color-primary text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row justify-between mb-12">
+                <!-- School Info -->
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <div class="text-2xl font-bold mb-4">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        Bright Future
+                    </div>
+                    <p class="text-blue-200 mb-6">Providing quality education since 1995. Our mission is to prepare students for a successful future through academic excellence and character development.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Home</a></li>
+                        <li><a href="about.html" class="text-yellow-300 font-semibold"><i class="fas fa-chevron-right text-xs mr-2"></i> About Us</a></li>
+                        <li><a href="academics.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Academics</a></li>
+                        <li><a href="admissions.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Admissions</a></li>
+                        <li><a href="contact.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Contact Us</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">123 Education Avenue, Knowledge City, KC 10001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">(123) 456-7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">info@brightfutureschool.edu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">Mon-Fri: 8:00 AM - 5:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div class="lg:w-1/4">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Stay Updated</h3>
+                    <p class="text-blue-200 mb-4">Subscribe to our newsletter to receive updates on school events, academic news, and more.</p>
+                    <form class="space-y-4" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" class="w-full p-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg w-full transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p class="text-sm text-blue-300 mt-4">By subscribing, you agree to our Privacy Policy.</p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-blue-800 pt-6 text-center">
+                <p class="text-blue-300">&copy; 2023 Bright Future Secondary School. All rights reserved.</p>
+                <div class="flex justify-center mt-4 space-x-6 text-sm text-blue-300">
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Terms of Service</a>
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Cookie Policy</a>
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if(this.getAttribute('href') !== '#') {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if(targetId.startsWith('#')) {
+                            const targetElement = document.querySelector(targetId);
+                            if(targetElement) {
+                                window.scrollTo({
+                                    top: targetElement.offsetTop - 80,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

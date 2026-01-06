@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bright Future Secondary School</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .school-color-primary {
+            background-color: #1e40af;
+        }
+        .school-color-secondary {
+            background-color: #0ea5e9;
+        }
+        .school-color-accent {
+            background-color: #f59e0b;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .contact-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="school-color-primary text-white p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <i class="fas fa-graduation-cap mr-2"></i>
+                Bright Future Secondary School
+            </div>
+            <div class="space-x-6 hidden md:flex">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="About.html" class="hover:text-yellow-300">About</a>
+                <a href="academics.html" class="hover:text-yellow-300">Academics</a>
+                <a href="admission.html" class="hover:text-yellow-300">Admissions</a>
+                <a href="contact.html" class="text-yellow-300 font-semibold">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden mt-4 pb-2" id="mobileMenu">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="hover:text-yellow-300 py-2">Home</a>
+                <a href="about.html" class="hover:text-yellow-300 py-2">About</a>
+                <a href="academics.html" class="hover:text-yellow-300 py-2">Academics</a>
+                <a href="admissions.html" class="hover:text-yellow-300 py-2">Admissions</a>
+                <a href="contact.html" class="text-yellow-300 font-semibold py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="school-color-secondary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">Contact Us</h1>
+            <p class="text-xl max-w-3xl mx-auto">Get in touch with us. We're here to answer your questions and provide information about our school.</p>
+            <div class="mt-8 flex justify-center space-x-4 flex-wrap">
+                <a href="#contact-info" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-6 rounded-full transition duration-300 mb-2">
+                    Contact Info
+                </a>
+                <a href="#contact-form" class="bg-white/30 hover:bg-white/40 text-white font-bold py-2 px-6 rounded-full transition duration-300 mb-2">
+                    Send Message
+                </a>
+                <a href="#location" class="bg-white/30 hover:bg-white/40 text-white font-bold py-2 px-6 rounded-full transition duration-300 mb-2">
+                    Visit Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Contact Information -->
+        <section id="contact-info" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Get in Touch</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Multiple ways to reach us. We're available during office hours and respond to all inquiries promptly.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-lg contact-card text-center">
+                    <div class="school-color-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Phone</h3>
+                    <p class="text-gray-600 mb-2">Call us during office hours</p>
+                    <div class="space-y-1">
+                        <p class="font-semibold text-blue-700">(041) 456-7890</p>
+                        <p class="font-semibold text-blue-700">(041) 456-7891</p>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3">Mon-Fri: 8:00 AM - 5:00 PM</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg contact-card text-center">
+                    <div class="school-color-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Email</h3>
+                    <p class="text-gray-600 mb-2">Send us an email anytime</p>
+                    <div class="space-y-1">
+                        <p class="font-semibold text-blue-700">info@brightfutureschool.edu</p>
+                        <p class="font-semibold text-blue-700">admissions@brightfutureschool.edu</p>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3">Response within 24 hours</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg contact-card text-center">
+                    <div class="school-color-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Visit</h3>
+                    <p class="text-gray-600 mb-2">Come visit our campus</p>
+                    <p class="font-semibold text-blue-700">123 Education Avenue</p>
+                    <p class="font-semibold text-blue-700">Knowledge City, KC 10001</p>
+                    <p class="text-sm text-gray-500 mt-3">Appointments recommended</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg contact-card text-center">
+                    <div class="school-color-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Office Hours</h3>
+                    <p class="text-gray-600 mb-2">When we're available</p>
+                    <div class="space-y-1">
+                        <p class="font-semibold">Monday - Friday</p>
+                        <p class="text-blue-700">8:00 AM - 5:00 PM</p>
+                        <p class="font-semibold mt-2">Saturday</p>
+                        <p class="text-blue-700">9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Emergency Contact -->
+            <div class="bg-gradient-to-r from-blue-900 to-blue-700 rounded-2xl p-8 text-white">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-6 md:mb-0 md:mr-8">
+                        <h3 class="text-2xl font-bold mb-3">Emergency Contact</h3>
+                        <p class="text-blue-200">For urgent matters outside office hours, please contact our emergency line.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">(041) 456-7899</div>
+                        <p class="text-blue-200">24/7 Emergency Line</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form & Location -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <!-- Contact Form -->
+            <section id="contact-form" class="fade-in">
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Send Us a Message</h2>
+                    <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form id="contactForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="contactName">Full Name *</label>
+                                <input type="text" id="contactName" name="contactName" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="contactEmail">Email Address *</label>
+                                <input type="email" id="contactEmail" name="contactEmail" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="contactPhone">Phone Number</label>
+                                <input type="tel" id="contactPhone" name="contactPhone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="contactSubject">Subject *</label>
+                                <select id="contactSubject" name="contactSubject" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                    <option value="">Select Subject</option>
+                                    <option value="admissions">Admissions Inquiry</option>
+                                    <option value="academics">Academic Programs</option>
+                                    <option value="fees">Fee Structure</option>
+                                    <option value="visit">School Visit/Tour</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" for="contactMessage">Your Message *</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="6" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="mr-3">
+                                <label for="newsletter" class="text-gray-700">Subscribe to our newsletter for updates and announcements</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="school-color-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg w-full transition duration-300">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                        
+                        <p class="text-sm text-gray-500 mt-4">By submitting this form, you agree to our Privacy Policy. We'll never share your information with third parties.</p>
+                    </form>
+                </div>
+            </section>
+            
+            <!-- Location & Map -->
+            <section id="location" class="fade-in">
+                <div class="bg-white rounded-2xl shadow-xl p-8 h-full">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Our Location</h2>
+                    <p class="text-gray-600 mb-8">Visit our campus in Knowledge City. We're easily accessible by public and private transport.</p>
+                    
+                    <!-- Map Placeholder -->
+                    <div class="map-container mb-8">
+                        <div class="h-64 bg-gradient-to-r from-blue-100 to-cyan-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-map-marker-alt text-blue-400 text-6xl mb-4"></i>
+                                <p class="text-blue-800 font-semibold text-xl">Bright Future Secondary School</p>
+                                <p class="text-blue-600">123 Education Avenue, Knowledge City</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Directions & Transport -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-blue-900 mb-4">How to Reach Us</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-2"><i class="fas fa-bus text-blue-600 mr-2"></i> By Public Transport</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Bus Routes: 14, 27, 33, 45</li>
+                                    <li>• Taxi Stage: Knowledge City Central</li>
+                                    <li>• Nearest Station: Education Avenue Stop</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-2"><i class="fas fa-car text-blue-600 mr-2"></i> By Private Vehicle</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Parking available on campus</li>
+                                    <li>• Secure parking area</li>
+                                    <li>• Visitor parking at main gate</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Visit Information -->
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-blue-900 mb-4">Campus Visit Information</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-calendar-check text-blue-600 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">Scheduled Tours</p>
+                                    <p class="text-sm text-gray-600">Every Wednesday & Friday at 10:00 AM</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-user-friends text-blue-600 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">Group Visits</p>
+                                    <p class="text-sm text-gray-600">Special arrangements for groups of 5+</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-blue-600 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="font-semibold">Appointment Required</p>
+                                    <p class="text-sm text-gray-600">Please call or email to schedule a visit</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Department Contacts -->
+        <section class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Contact Specific Departments</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Get in touch with the right department for your specific inquiry</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                    <div class="flex items-center mb-4">
+                        <div class="school-color-primary text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900">Admissions Office</h3>
+                            <p class="text-sm text-gray-600">For admission inquiries</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Questions about applications, entrance exams, and enrollment procedures.</p>
+                    <div class="space-y-2">
+                        <p class="text-sm"><i class="fas fa-envelope text-blue-600 mr-2"></i> admissions@brightfutureschool.edu</p>
+                        <p class="text-sm"><i class="fas fa-phone text-blue-600 mr-2"></i> (041) 456-7892</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-600">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900">Academic Office</h3>
+                            <p class="text-sm text-gray-600">For academic matters</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Curriculum, courses, academic calendar, and student performance inquiries.</p>
+                    <div class="space-y-2">
+                        <p class="text-sm"><i class="fas fa-envelope text-blue-600 mr-2"></i> academics@brightfutureschool.edu</p>
+                        <p class="text-sm"><i class="fas fa-phone text-blue-600 mr-2"></i> (041) 456-7893</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-money-check-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900">Accounts Office</h3>
+                            <p class="text-sm text-gray-600">For fee and payment inquiries</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Fee structure, payment methods, invoices, and financial matters.</p>
+                    <div class="space-y-2">
+                        <p class="text-sm"><i class="fas fa-envelope text-blue-600 mr-2"></i> accounts@brightfutureschool.edu</p>
+                        <p class="text-sm"><i class="fas fa-phone text-blue-600 mr-2"></i> (041) 456-7894</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Quick answers to common questions about our school</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">What are the school hours?</h3>
+                        <p class="text-gray-600">School runs from 8:00 AM to 4:30 PM for day students. Boarding students have structured activities until 9:00 PM.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">How do I apply for admission?</h3>
+                        <p class="text-gray-600">You can apply online through our admissions portal or visit the school to collect an application form. The admission fee is 50,000 UGX.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">Do you offer scholarships?</h3>
+                        <p class="text-gray-600">Yes, we offer merit-based scholarships for outstanding students. Applications are reviewed annually in January.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">What is the teacher-student ratio?</h3>
+                        <p class="text-gray-600">We maintain a 1:20 teacher-student ratio to ensure personalized attention and quality education for all students.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">Can I schedule a campus tour?</h3>
+                        <p class="text-gray-600">Yes, campus tours are available every Wednesday and Friday at 10:00 AM. Please call to schedule in advance.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h3 class="text-lg font-bold text-blue-900 mb-2">What safety measures are in place?</h3>
+                        <p class="text-gray-600">We have 24/7 security, CCTV surveillance, controlled access points, and trained security personnel on campus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer class="school-color-primary text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row justify-between mb-12">
+                <!-- School Info -->
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <div class="text-2xl font-bold mb-4">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        Bright Future
+                    </div>
+                    <p class="text-blue-200 mb-6">Providing quality education since 1995. Our mission is to prepare students for a successful future through academic excellence and character development.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Home</a></li>
+                        <li><a href="about.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> About Us</a></li>
+                        <li><a href="academics.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Academics</a></li>
+                        <li><a href="admissions.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Admissions</a></li>
+                        <li><a href="contact.html" class="text-yellow-300 font-semibold"><i class="fas fa-chevron-right text-xs mr-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Contact Us</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">123 Education Avenue, Knowledge City, KC 10001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">(041) 456-7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">info@brightfutureschool.edu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">Mon-Fri: 8:00 AM - 5:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div class="lg:w-1/4">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Stay Updated</h3>
+                    <p class="text-blue-200 mb-4">Subscribe to our newsletter to receive updates on school events, academic news, and more.</p>
+                    <form class="space-y-4" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" class="w-full p-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg w-full transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p class="text-sm text-blue-300 mt-4">By subscribing, you agree to our Privacy Policy.</p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-blue-800 pt-6 text-center">
+                <p class="text-blue-300">&copy; 2023 Bright Future Secondary School. All rights reserved.</p>
+                <div class="flex justify-center mt-4 space-x-6 text-sm text-blue-300">
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Terms of Service</a>
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Cookie Policy</a>
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Form submission handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple validation
+                    const name = document.getElementById('contactName').value;
+                    const email = document.getElementById('contactEmail').value;
+                    const message = document.getElementById('contactMessage').value;
+                    
+                    if (name && email && message) {
+                        // Show success message
+                        alert('Thank you for your message! We will get back to you within 24 hours.');
+                        contactForm.reset();
+                    } else {
+                        alert('Please fill in all required fields.');
+                    }
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if(this.getAttribute('href') !== '#') {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if(targetId.startsWith('#')) {
+                            const targetElement = document.querySelector(targetId);
+                            if(targetElement) {
+                                window.scrollTo({
+                                    top: targetElement.offsetTop - 80,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

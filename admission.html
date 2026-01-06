@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Bright Future Secondary School</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .school-color-primary {
+            background-color: #1e40af;
+        }
+        .school-color-secondary {
+            background-color: #0ea5e9;
+        }
+        .school-color-accent {
+            background-color: #f59e0b;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+        .upload-area {
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .upload-area:hover {
+            border-color: #3b82f6;
+            background-color: #f0f9ff;
+        }
+        .upload-area.dragover {
+            border-color: #3b82f6;
+            background-color: #dbeafe;
+        }
+        .payment-option {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .payment-option.selected {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+        }
+        .fee-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .fee-table th, .fee-table td {
+            border: 1px solid #e5e7eb;
+            padding: 12px;
+            text-align: left;
+        }
+        .fee-table th {
+            background-color: #f8fafc;
+            font-weight: 600;
+        }
+        .fee-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="school-color-primary text-white p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <i class="fas fa-graduation-cap mr-2"></i>
+                Bright Future Secondary School
+            </div>
+            <div class="space-x-6 hidden md:flex">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="about.html" class="hover:text-yellow-300">About</a>
+                <a href="academics.html" class="hover:text-yellow-300">Academics</a>
+                <a href="admission.html" class="text-yellow-300 font-semibold">Admissions</a>
+                <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden mt-4 pb-2" id="mobileMenu">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="hover:text-yellow-300 py-2">Home</a>
+                <a href="About.html" class="hover:text-yellow-300 py-2">About</a>
+                <a href="academics.html" class="hover:text-yellow-300 py-2">Academics</a>
+                <a href="admissions.html" class="text-yellow-300 font-semibold py-2">Admissions</a>
+                <a href="contact.html" class="hover:text-yellow-300 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="school-color-secondary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">Admissions</h1>
+            <p class="text-xl max-w-3xl mx-auto">Begin your journey towards academic excellence. Applications for the 2024/2025 academic year are now open.</p>
+            <div class="mt-8 flex justify-center space-x-4 flex-wrap">
+                <a href="#apply" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-6 rounded-full transition duration-300 mb-2">
+                    Apply Now
+                </a>
+                <a href="#fees" class="bg-white/30 hover:bg-white/40 text-white font-bold py-2 px-6 rounded-full transition duration-300 mb-2">
+                    Fee Structure
+                </a>
+                <a href="#process" class="bg-white/30 hover:bg-white/40 text-white font-bold py-2 px-6 rounded-full transition duration-300 mb-2">
+                    Admission Process
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Admission Process -->
+        <section id="process" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Admission Process</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Our straightforward admission process ensures a smooth transition for all new students</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="school-color-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Application</h3>
+                    <p class="text-gray-600">Complete the online application form with required documents</p>
+                </div>
+                <div class="text-center">
+                    <div class="school-color-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Assessment</h3>
+                    <p class="text-gray-600">Take entrance examination and attend interview session</p>
+                </div>
+                <div class="text-center">
+                    <div class="school-color-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Payment</h3>
+                    <p class="text-gray-600">Pay admission fee (50,000 UGX) and first term school fees</p>
+                </div>
+                <div class="text-center">
+                    <div class="school-color-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Enrollment</h3>
+                    <p class="text-gray-600">Receive admission letter and complete registration process</p>
+                </div>
+            </div>
+            
+            <!-- Important Dates -->
+            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Admission Timeline 2024/2025</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h4 class="text-xl font-bold text-blue-900 mb-2">Application Period</h4>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-calendar-alt text-blue-600 mr-2"></i> January 1 - March 31, 2024</p>
+                        <p class="text-sm text-gray-500">Online applications accepted during this period</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h4 class="text-xl font-bold text-blue-900 mb-2">Entrance Exams</h4>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-calendar-alt text-blue-600 mr-2"></i> April 15 - 30, 2024</p>
+                        <p class="text-sm text-gray-500">Scheduled assessment for all applicants</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <h4 class="text-xl font-bold text-blue-900 mb-2">Admission Decisions</h4>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-calendar-alt text-blue-600 mr-2"></i> May 15, 2024</p>
+                        <p class="text-sm text-gray-500">Successful applicants notified via email/SMS</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fee Structure -->
+        <section id="fees" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Fee Structure 2024/2025</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Transparent and comprehensive fee structure for both day and boarding sections</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Day Section Fees -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="school-color-primary text-white p-4 text-center">
+                        <h3 class="text-2xl font-bold">Day Section Fees</h3>
+                        <p class="text-blue-200">Monday - Friday (7:30 AM - 4:30 PM)</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <h4 class="text-xl font-bold text-blue-900 mb-4">Termly Fees</h4>
+                            <div class="overflow-x-auto">
+                                <table class="fee-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Class</th>
+                                            <th>Tuition Fee</th>
+                                            <th>Activity Fee</th>
+                                            <th>Total Per Term</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>S.1 & S.2</td>
+                                            <td>800,000 UGX</td>
+                                            <td>150,000 UGX</td>
+                                            <td><strong>950,000 UGX</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>S.3 & S.4</td>
+                                            <td>850,000 UGX</td>
+                                            <td>200,000 UGX</td>
+                                            <td><strong>1,050,000 UGX</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>S.5 & S.6</td>
+                                            <td>900,000 UGX</td>
+                                            <td>250,000 UGX</td>
+                                            <td><strong>1,150,000 UGX</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-xl font-bold text-blue-900 mb-4">One-Time Payments</h4>
+                            <ul class="space-y-3">
+                                <li class="flex justify-between border-b pb-2">
+                                    <span>Admission Fee (Non-refundable)</span>
+                                    <span class="font-bold text-blue-700">50,000 UGX</span>
+                                </li>
+                                <li class="flex justify-between border-b pb-2">
+                                    <span>Registration Fee</span>
+                                    <span class="font-bold text-blue-700">100,000 UGX</span>
+                                </li>
+                                <li class="flex justify-between border-b pb-2">
+                                    <span>Development Fee</span>
+                                    <span class="font-bold text-blue-700">200,000 UGX</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="font-bold">Total Initial Payment</span>
+                                    <span class="font-bold text-green-700">350,000 UGX</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                            <h5 class="font-bold text-yellow-800 mb-2"><i class="fas fa-info-circle mr-2"></i>Important Notes</h5>
+                            <ul class="text-sm text-yellow-700 space-y-1">
+                                <li>• Fees are payable at the beginning of each term</li>
+                                <li>• A 5% discount for full year payment in advance</li>
+                                <li>• Sibling discount: 10% for second child, 15% for third child</li>
+                                <li>• Lunch is optional at 150,000 UGX per term</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Boarding Section Fees -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-blue-900 text-white p-4 text-center">
+                        <h3 class="text-2xl font-bold">Boarding Section Fees</h3>
+                        <p class="text-blue-200">Full Residential Facilities</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <h4 class="text-xl font-bold text-blue-900 mb-4">Termly Fees (Inclusive)</h4>
+                            <div class="overflow-x-auto">
+                                <table class="fee-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Class</th>
+                                            <th>Tuition + Boarding</th>
+                                            <th>Activity Fee</th>
+                                            <th>Total Per Term</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>S.1 & S.2</td>
+                                            <td>1,500,000 UGX</td>
+                                            <td>150,000 UGX</td>
+                                            <td><strong>1,650,000 UGX</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>S.3 & S.4</td>
+                                            <td>1,600,000 UGX</td>
+                                            <td>200,000 UGX</td>
+                                            <td><strong>1,800,000 UGX</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>S.5 & S.6</td>
+                                            <td>1,700,000 UGX</td>
+                                            <td>250,000 UGX</td>
+                                            <td><strong>1,950,000 UGX</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-xl font-bold text-blue-900 mb-4">What's Included in Boarding</h4>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="text-sm">Accommodation</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="text-sm">All Meals</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="text-sm">Evening Prep</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="text-sm">Laundry Service</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="text-sm">Medical Care</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span class="text-sm">Sports Facilities</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <h5 class="font-bold text-blue-800 mb-2"><i class="fas fa-bed mr-2"></i>Boarding Information</h5>
+                            <ul class="text-sm text-blue-700 space-y-1">
+                                <li>• Separate dormitories for boys and girls</li>
+                                <li>• 24/7 security and house parents supervision</li>
+                                <li>• Weekend activities and excursions</li>
+                                <li>• Students go home during mid-term and holidays</li>
+                                <li>• Boarding kit (bedding, mosquito net) provided</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Online Application Form -->
+        <section id="apply" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Online Application Form</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Complete this form to apply for admission. All fields marked with * are required.</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <!-- Form Progress Steps -->
+                <div class="school-color-primary text-white p-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div id="stepIndicator1" class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center mr-3 font-bold">1</div>
+                            <span class="hidden md:inline">Personal Details</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div id="stepIndicator2" class="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center mr-3 font-bold">2</div>
+                            <span class="hidden md:inline">Academic Info</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div id="stepIndicator3" class="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center mr-3 font-bold">3</div>
+                            <span class="hidden md:inline">Documents Upload</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div id="stepIndicator4" class="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center mr-3 font-bold">4</div>
+                            <span class="hidden md:inline">Payment</span>
+                        </div>
+                    </div>
+                    <div class="w-full bg-white/30 h-2 mt-4 rounded-full">
+                        <div class="bg-yellow-500 h-2 rounded-full w-1/4" id="progressBar"></div>
+                    </div>
+                </div>
+                
+                <!-- Application Form -->
+                <form id="admissionForm" class="p-6 md:p-8">
+                    <!-- Step 1: Personal Details -->
+                    <div class="form-step active" id="step1">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Student Personal Details</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="gender">Gender *</label>
+                                <select id="gender" name="gender" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="dob">Date of Birth *</label>
+                                <input type="date" id="dob" name="dob" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="nationality">Nationality *</label>
+                                <input type="text" id="nationality" name="nationality" value="Ugandan" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="religion">Religion</label>
+                                <select id="religion" name="religion" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select Religion</option>
+                                    <option value="christian">Christian</option>
+                                    <option value="muslim">Muslim</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-xl font-bold text-blue-900 mb-4 mt-8">Contact Information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 mb-2" for="address">Physical Address *</label>
+                                <textarea id="address" name="address" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-xl font-bold text-blue-900 mb-4">Parent/Guardian Information</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="parentName">Parent/Guardian Full Name *</label>
+                                <input type="text" id="parentName" name="parentName" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="parentPhone">Parent Phone Number *</label>
+                                <input type="tel" id="parentPhone" name="parentPhone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="parentEmail">Parent Email</label>
+                                <input type="email" id="parentEmail" name="parentEmail" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="parentOccupation">Parent Occupation</label>
+                                <input type="text" id="parentOccupation" name="parentOccupation" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-end mt-8">
+                            <a href="#step2" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-block">
+                                 Next: Academic Information <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Academic Information -->
+                    <div class="form-step" id="step2">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Academic Information</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="applyingFor">Applying for Class *</label>
+                                <select id="applyingFor" name="applyingFor" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                    <option value="">Select Class</option>
+                                    <option value="s1">Senior 1</option>
+                                    <option value="s2">Senior 2</option>
+                                    <option value="s3">Senior 3</option>
+                                    <option value="s4">Senior 4</option>
+                                    <option value="s5">Senior 5</option>
+                                    <option value="s6">Senior 6</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="studentType">Student Type *</label>
+                                <select id="studentType" name="studentType" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                    <option value="">Select Type</option>
+                                    <option value="day">Day Student</option>
+                                    <option value="boarding">Boarding Student</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="previousSchool">Previous School *</label>
+                                <input type="text" id="previousSchool" name="previousSchool" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="previousClass">Previous Class Completed *</label>
+                                <input type="text" id="previousClass" name="previousClass" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" for="academicAchievements">Academic Achievements & Awards</label>
+                            <textarea id="academicAchievements" name="academicAchievements" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="List any academic achievements, awards, or distinctions received"></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-4">Extracurricular Activities Interested In</label>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="sports" name="extracurricular[]" value="sports" class="mr-2">
+                                    <label for="sports">Sports</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="music" name="extracurricular[]" value="music" class="mr-2">
+                                    <label for="music">Music</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="drama" name="extracurricular[]" value="drama" class="mr-2">
+                                    <label for="drama">Drama</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="debate" name="extracurricular[]" value="debate" class="mr-2">
+                                    <label for="debate">Debate Club</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="science" name="extracurricular[]" value="science" class="mr-2">
+                                    <label for="science">Science Club</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="art" name="extracurricular[]" value="art" class="mr-2">
+                                    <label for="art">Art Club</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="coding" name="extracurricular[]" value="coding" class="mr-2">
+                                    <label for="coding">Coding Club</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="community" name="extracurricular[]" value="community" class="mr-2">
+                                    <label for="community">Community Service</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-8">
+                            <a href="#step1" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-8 rounded-lg transition duration-300 inline-block mr-4">
+    <i class="fas fa-arrow-left mr-2"></i> Back
+</a>
+<a href="#step3" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-block">
+    Next: Documents Upload <i class="fas fa-arrow-right ml-2"></i>
+</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Documents Upload -->
+                    <div class="form-step" id="step3">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Required Documents Upload</h3>
+                        <p class="text-gray-600 mb-6">Please upload clear scanned copies of the following documents (JPEG, PNG or PDF format, max 2MB each)</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <!-- Student Passport Photo -->
+                            <div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-4">Student Passport Photo *</h4>
+                                <div class="upload-area" id="studentPhotoArea">
+                                    <i class="fas fa-camera text-4xl text-gray-400 mb-4"></i>
+                                    <p class="text-gray-600 mb-2">Click to upload or drag and drop</p>
+                                    <p class="text-sm text-gray-500">JPEG or PNG (Max 2MB)</p>
+                                    <p class="text-sm text-gray-500 mt-2">Recent color passport photo with white background</p>
+                                    <input type="file" id="studentPhoto" name="studentPhoto" accept="image/*" class="hidden" required>
+                                    <div class="mt-4" id="studentPhotoPreview"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Parent/Guardian Photo -->
+                            <div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-4">Parent/Guardian Photo</h4>
+                                <div class="upload-area" id="parentPhotoArea">
+                                    <i class="fas fa-user text-4xl text-gray-400 mb-4"></i>
+                                    <p class="text-gray-600 mb-2">Click to upload or drag and drop</p>
+                                    <p class="text-sm text-gray-500">JPEG or PNG (Max 2MB)</p>
+                                    <p class="text-sm text-gray-500 mt-2">Photo of parent/guardian (optional but recommended)</p>
+                                    <input type="file" id="parentPhoto" name="parentPhoto" accept="image/*" class="hidden">
+                                    <div class="mt-4" id="parentPhotoPreview"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="text-lg font-bold text-blue-900 mb-4">Other Required Documents</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="birthCertificate">Birth Certificate *</label>
+                                    <div class="upload-area p-4" id="birthCertArea">
+                                        <i class="fas fa-file text-3xl text-gray-400 mb-2"></i>
+                                        <p class="text-sm text-gray-600 mb-2">Upload Birth Certificate</p>
+                                        <input type="file" id="birthCertificate" name="birthCertificate" accept=".pdf,.jpg,.jpeg,.png" class="hidden" required>
+                                        <div id="birthCert
+
+                                        Preview"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="previousSchoolCert">Previous School Certificate *</label>
+                                    <div class="upload-area p-4" id="schoolCertArea">
+                                        <i class="fas fa-file text-3xl text-gray-400 mb-2"></i>
+                                        <p class="text-sm text-gray-600 mb-2">Upload School Certificate</p>
+                                        <input type="file" id="previousSchoolCert" name="previousSchoolCert" accept=".pdf,.jpg,.jpeg,.png" class="hidden" required>
+                                        <div id="schoolCertPreview"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between">
+                            <a href="#step2" class="text-blue-600 hover:text-blue-700 font-bold py-3 px-8 rounded-lg transition duration-300 inline-block">
+                                <i class="fas fa-arrow-left mr-2"></i> Back
+                            </a>
+                            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                                Submit Application <i class="fas fa-check ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="school-color-primary text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row justify-between mb-12">
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <div class="text-2xl font-bold mb-4">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        Bright Future
+                    </div>
+                    <p class="text-blue-200 mb-6">Providing quality education since 1995. Our mission is to prepare students for a successful future through academic excellence and character development.</p>
+                </div>
+
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-blue-200 hover:text-yellow-300 transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-blue-200 hover:text-yellow-300 transition duration-300">About Us</a></li>
+                        <li><a href="contact.html" class="text-blue-200 hover:text-yellow-300 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Contact Us</h3>
+                    <p class="text-blue-200">(123) 456-7890</p>
+                    <p class="text-blue-200">info@brightfutureschool.edu</p>
+                </div>
+
+                <div class="lg:w-1/4">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Stay Updated</h3>
+                    <form class="space-y-4" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" class="w-full p-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg w-full transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-800 pt-6 text-center">
+                <p class="text-blue-300">&copy; 2023 Bright Future Secondary School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu + Multi-step Form JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Multi-step form navigation and validation
+            const form = document.getElementById('admissionForm');
+            const steps = Array.from(document.querySelectorAll('.form-step'));
+            const progressBar = document.getElementById('progressBar');
+            const stepIndicators = [
+                document.getElementById('stepIndicator1'),
+                document.getElementById('stepIndicator2'),
+                document.getElementById('stepIndicator3'),
+                document.getElementById('stepIndicator4')
+            ].filter(Boolean);
+
+            function updateProgress(index) {
+                const pct = ((index + 1) / steps.length) * 100;
+                if (progressBar) progressBar.style.width = pct + '%';
+                stepIndicators.forEach((el, i) => {
+                    if (!el) return;
+                    if (i <= index) {
+                        el.classList.remove('bg-white/30');
+                        el.classList.add('bg-yellow-500');
+                    } else {
+                        el.classList.remove('bg-yellow-500');
+                        el.classList.add('bg-white/30');
+                    }
+                });
+            }
+
+            function showStep(id) {
+                steps.forEach(s => s.classList.remove('active'));
+                const target = document.getElementById(id);
+                if (target) target.classList.add('active');
+                const idx = steps.findIndex(s => s.id === id);
+                if (idx >= 0) updateProgress(idx);
+            }
+
+            // Intercept clicks on links that point to step anchors (e.g. href="#step2")
+            document.querySelectorAll('a[href^="#step"]').forEach(a => {
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const current = steps.find(s => s.classList.contains('active')) || steps[0];
+
+                    // Validate required inputs in the current step before moving on
+                    const invalid = Array.from(current.querySelectorAll('input,select,textarea'))
+                        .some(input => !input.checkValidity());
+                    if (invalid) {
+                        const firstInvalid = current.querySelector('input:invalid,select:invalid,textarea:invalid');
+                        if (firstInvalid && typeof firstInvalid.reportValidity === 'function') {
+                            firstInvalid.reportValidity();
+                            firstInvalid.focus();
+                        } else {
+                            alert('Please fill in the required fields before continuing.');
+                        }
+                        return;
+                    }
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    if (document.getElementById(targetId)) {
+                        showStep(targetId);
+                        // update the hash without scrolling
+                        history.replaceState(null, '', '#' + targetId);
+                    }
+                });
+            });
+
+            // Allow direct hash navigation (if user opens with #step2)
+            if (location.hash && location.hash.startsWith('#step')) {
+                const id = location.hash.substring(1);
+                if (document.getElementById(id)) showStep(id);
+            } else {
+                // initialize to whichever step has .active, or first
+                const active = document.querySelector('.form-step.active') || steps[0];
+                if (active) showStep(active.id);
+            }
+
+            // Optional: handle form submission normally
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    // let browser do validation; you can add extra submission logic here
+                });
+            }
+
+            // File upload functionality
+            const uploadAreas = [
+                { areaId: 'studentPhotoArea', inputId: 'studentPhoto', previewId: 'studentPhotoPreview' },
+                { areaId: 'parentPhotoArea', inputId: 'parentPhoto', previewId: 'parentPhotoPreview' },
+                { areaId: 'birthCertArea', inputId: 'birthCertificate', previewId: 'birthCertPreview' },
+                { areaId: 'schoolCertArea', inputId: 'previousSchoolCert', previewId: 'schoolCertPreview' }
+            ];
+
+            uploadAreas.forEach(config => {
+                const area = document.getElementById(config.areaId);
+                const input = document.getElementById(config.inputId);
+                const preview = document.getElementById(config.previewId);
+
+                if (!area || !input) return;
+
+                // Make the area clickable
+                area.addEventListener('click', () => input.click());
+
+                // Handle file selection
+                input.addEventListener('change', function(e) {
+                    const file = this.files[0];
+                    if (!file) return;
+
+                    // Show file name and size in preview
+                    const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
+                    preview.innerHTML = `
+                        <div class="text-green-600 font-semibold flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i> ${file.name}
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">${sizeInMB} MB</p>
+                    `;
+
+                    // If it's an image, show a thumbnail preview
+                    if (file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.classList.add('mt-4', 'max-h-32', 'rounded', 'border', 'border-green-300');
+                            preview.appendChild(img);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                // Drag and drop support
+                area.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    area.classList.add('dragover');
+                });
+
+                area.addEventListener('dragleave', () => {
+                    area.classList.remove('dragover');
+                });
+
+                area.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    area.classList.remove('dragover');
+                    const files = e.dataTransfer.files;
+                    if (files.length > 0) {
+                        input.files = files;
+                        // Trigger change event
+                        const event = new Event('change', { bubbles: true });
+                        input.dispatchEvent(event);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

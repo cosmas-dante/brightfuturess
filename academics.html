@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Bright Future Secondary School</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .school-color-primary {
+            background-color: #1e40af;
+        }
+        .school-color-secondary {
+            background-color: #0ea5e9;
+        }
+        .school-color-accent {
+            background-color: #f59e0b;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .subject-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .performance-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        .achievement-badge {
+            position: relative;
+            overflow: hidden;
+        }
+        .achievement-badge::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="school-color-primary text-white p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <i class="fas fa-graduation-cap mr-2"></i>
+                Bright Future Secondary School
+            </div>
+            <div class="space-x-6 hidden md:flex">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="about.html" class="hover:text-yellow-300">About</a>
+                <a href="academics.html" class="text-yellow-300 font-semibold">Academics</a>
+                <a href="admission.html" class="hover:text-yellow-300">Admissions</a>
+                <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden mt-4 pb-2" id="mobileMenu">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="hover:text-yellow-300 py-2">Home</a>
+                <a href="about.html" class="hover:text-yellow-300 py-2">About</a>
+                <a href="academics.html" class="text-yellow-300 font-semibold py-2">Academics</a>
+                <a href="admissions.html" class="hover:text-yellow-300 py-2">Admissions</a>
+                <a href="contact.html" class="hover:text-yellow-300 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="school-color-secondary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">Academic Excellence</h1>
+            <p class="text-xl max-w-3xl mx-auto">Comprehensive curriculum designed to challenge, inspire, and prepare students for future success</p>
+            <div class="mt-8 flex justify-center space-x-4 flex-wrap">
+                <a href="#programs" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-6 rounded-full transition duration-300 mb-2">
+                    Our Programs
+                </a>
+                <a href="#performance" class="bg-white/30 hover:bg-white/40 text-white font-bold py-2 px-6 rounded-full transition duration-300 mb-2">
+                    Past Performance
+                </a>
+                <a href="#facilities" class="bg-white/30 hover:bg-white/40 text-white font-bold py-2 px-6 rounded-full transition duration-300 mb-2">
+                    Academic Facilities
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Academic Programs Section -->
+        <section id="programs" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Academic Programs</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">We offer a diverse range of programs designed to cater to different interests and career aspirations</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+                <div class="bg-white rounded-xl shadow-lg p-6 subject-card border-t-4 border-blue-600">
+                    <div class="flex items-center mb-4">
+                        <div class="school-color-primary text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-atom text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">STEM Program</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Advanced courses in Science, Technology, Engineering, and Mathematics with hands-on laboratory experiences and research opportunities.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Advanced Mathematics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Physics & Chemistry</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Computer Science & Robotics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Engineering Principles</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 subject-card border-t-4 border-green-600">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-language text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Humanities Program</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Comprehensive study of languages, literature, history, and social sciences to develop critical thinking and communication skills.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> World Literature</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> History & Geography</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Philosophy & Ethics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Foreign Languages</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 subject-card border-t-4 border-purple-600">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-palette text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Arts Program</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Creative expression through visual arts, music, drama, and dance to foster imagination and artistic talent.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Fine Arts & Design</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Music Theory & Performance</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Theater & Drama</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Digital Media Arts</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Academic Calendar & Schedule</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center p-4">
+                        <div class="text-4xl font-bold text-blue-700 mb-2">8:00 AM</div>
+                        <p class="text-gray-700 font-semibold">School Starts</p>
+                        <p class="text-gray-600 text-sm">Morning assembly begins</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="text-4xl font-bold text-blue-700 mb-2">6</div>
+                        <p class="text-gray-700 font-semibold">Periods Daily</p>
+                        <p class="text-gray-600 text-sm">Each 50 minutes long</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="text-4xl font-bold text-blue-700 mb-2">3:30 PM</div>
+                        <p class="text-gray-700 font-semibold">School Ends</p>
+                        <p class="text-gray-600 text-sm">Clubs & activities continue</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Performance Section -->
+        <section id="performance" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Academic Performance & Achievements</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Our students consistently excel in national examinations and secure admissions to top universities worldwide</p>
+            </div>
+            
+            <!-- Overall Performance Stats -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
+                <h3 class="text-2xl font-bold text-blue-900 mb-8 text-center">Overall Examination Performance (Past 2 Years)</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+                    <div class="text-center p-4 bg-blue-50 rounded-xl">
+                        <div class="text-4xl font-bold text-blue-700 mb-2">98%</div>
+                        <p class="text-gray-700 font-semibold">Pass Rate</p>
+                        <p class="text-gray-600 text-sm">National Examinations</p>
+                    </div>
+                    <div class="text-center p-4 bg-green-50 rounded-xl">
+                        <div class="text-4xl font-bold text-green-700 mb-2">65%</div>
+                        <p class="text-gray-700 font-semibold">Distinction Rate</p>
+                        <p class="text-gray-600 text-sm">Grades A & A+</p>
+                    </div>
+                    <div class="text-center p-4 bg-yellow-50 rounded-xl">
+                        <div class="text-4xl font-bold text-yellow-700 mb-2">42</div>
+                        <p class="text-gray-700 font-semibold">Top Scorers</p>
+                        <p class="text-gray-600 text-sm">Nationwide Ranking</p>
+                    </div>
+                    <div class="text-center p-4 bg-purple-50 rounded-xl">
+                        <div class="text-4xl font-bold text-purple-700 mb-2">100%</div>
+                        <p class="text-gray-700 font-semibold">University Placement</p>
+                        <p class="text-gray-600 text-sm">Higher Education</p>
+                    </div>
+                </div>
+                
+                <!-- Performance by Subject -->
+                <div class="mb-10">
+                    <h4 class="text-xl font-bold text-blue-900 mb-6">Subject Performance (Average Score %)</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-semibold">Mathematics</span>
+                                <span class="font-bold text-blue-700">94%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full performance-bar" style="width: 94%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-semibold">Physics</span>
+                                <span class="font-bold text-blue-700">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full performance-bar" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-semibold">Chemistry</span>
+                                <span class="font-bold text-blue-700">91%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full performance-bar" style="width: 91%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-semibold">English Language</span>
+                                <span class="font-bold text-blue-700">89%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full performance-bar" style="width: 89%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-semibold">Computer Science</span>
+                                <span class="font-bold text-blue-700">96%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full performance-bar" style="width: 96%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top Performers -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-blue-900 mb-8 text-center">Top Performers (Last 2 Years)</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 2023 Top Performers -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="school-color-primary text-white p-4 text-center">
+                            <h4 class="text-xl font-bold">Class of 2023</h4>
+                            <p class="text-blue-200">National Examination Results</p>
+                        </div>
+                        <div class="p-6">
+                            <div class="overflow-x-auto">
+                                <table class="w-full">
+                                    <thead>
+                                        <tr class="border-b">
+                                            <th class="text-left py-3 px-2 text-gray-700">Student</th>
+                                            <th class="text-left py-3 px-2 text-gray-700">Average</th>
+                                            <th class="text-left py-3 px-2 text-gray-700">University</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b hover:bg-blue-50">
+                                            <td class="py-3 px-2">
+                                                <div class="font-semibold">Michael Chen</div>
+                                                <div class="text-sm text-gray-600">Valedictorian</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="font-bold text-blue-700">99.2%</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="text-sm">MIT, USA</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b hover:bg-blue-50">
+                                            <td class="py-3 px-2">
+                                                <div class="font-semibold">Sophia Williams</div>
+                                                <div class="text-sm text-gray-600">Salutatorian</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="font-bold text-blue-700">98.7%</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="text-sm">Oxford University, UK</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b hover:bg-blue-50">
+                                            <td class="py-3 px-2">
+                                                <div class="font-semibold">David Okafor</div>
+                                                <div class="text-sm text-gray-600">Science Excellence</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="font-bold text-blue-700">98.5%</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="text-sm">Stanford University, USA</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b hover:bg-blue-50">
+                                            <td class="py-3 px-2">
+                                                <div class="font-semibold">Emma Rodriguez</div>
+                                                <div class="text-sm text-gray-600">Mathematics Award</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="font-bold text-blue-700">98.3%</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="text-sm">Harvard University, USA</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="hover:bg-blue-50">
+                                            <td class="py-3 px-2">
+                                                <div class="font-semibold">James Kim</div>
+                                                <div class="text-sm text-gray-600">Technology Award</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="font-bold text-blue-700">97.9%</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="text-sm">Caltech, USA</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-4 text-center text-sm text-gray-600">
+                                <i class="fas fa-trophy text-yellow-500 mr-1"></i> 5 students ranked in National Top 50
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2022 Top Performers -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="school-color-primary text-white p-4 text-center">
+                            <h4 class="text-xl font-bold">Class of 2022</h4>
+                            <p class="text-blue-200">National Examination Results</p>
+                        </div>
+                        <div class="p-6">
+                            <div class="overflow-x-auto">
+                                <table class="w-full">
+                                    <thead>
+                                        <tr class="border-b">
+                                            <th class="text-left py-3 px-2 text-gray-700">Student</th>
+                                            <th class="text-left py-3 px-2 text-gray-700">Average</th>
+                                            <th class="text-left py-3 px-2 text-gray-700">University</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b hover:bg-blue-50">
+                                            <td class="py-3 px-2">
+                                                <div class="font-semibold">Olivia Johnson</div>
+                                                <div class="text-sm text-gray-600">Valedictorian</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="font-bold text-blue-700">98.9%</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="text-sm">Cambridge University, UK</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b hover:bg-blue-50">
+                                            <td class="py-3 px-2">
+                                                <div class="font-semibold">Benjamin Lee</div>
+                                                <div class="text-sm text-gray-600">Salutatorian</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="font-bold text-blue-700">98.6%</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="text-sm">University of Toronto, Canada</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b hover:bg-blue-50">
+                                            <td class="py-3 px-2">
+                                                <div class="font-semibold">Isabella Martinez</div>
+                                                <div class="text-sm text-gray-600">Arts Excellence</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="font-bold text-blue-700">98.4%</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="text-sm">Yale University, USA</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b hover:bg-blue-50">
+                                            <td class="py-3 px-2">
+                                                <div class="font-semibold">Ethan Wilson</div>
+                                                <div class="text-sm text-gray-600">Research Award</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="font-bold text-blue-700">98.1%</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="text-sm">Imperial College London, UK</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="hover:bg-blue-50">
+                                            <td class="py-3 px-2">
+                                                <div class="font-semibold">Ava Thompson</div>
+                                                <div class="text-sm text-gray-600">Humanities Award</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="font-bold text-blue-700">97.8%</div>
+                                            </td>
+                                            <td class="py-3 px-2">
+                                                <div class="text-sm">University of Melbourne, Australia</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-4 text-center text-sm text-gray-600">
+                                <i class="fas fa-award text-yellow-500 mr-1"></i> 12 Scholarship Awards Received
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Achievement Highlights -->
+            <div class="bg-gradient-to-r from-blue-900 to-blue-700 rounded-2xl p-8 text-white">
+                <h3 class="text-2xl font-bold mb-8 text-center">Recent Academic Achievements</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-800/50 rounded-xl p-6 text-center">
+                        <div class="text-5xl font-bold mb-4">1<sup>st</sup></div>
+                        <h4 class="text-xl font-bold mb-2">National Science Olympiad</h4>
+                        <p class="text-blue-200">2023 Champions - Team Chemistry</p>
+                    </div>
+                    <div class="bg-blue-800/50 rounded-xl p-6 text-center">
+                        <div class="text-5xl font-bold mb-4">3</div>
+                        <h4 class="text-xl font-bold mb-2">International Awards</h4>
+                        <p class="text-blue-200">Mathematics & Coding Competitions</p>
+                    </div>
+                    <div class="bg-blue-800/50 rounded-xl p-6 text-center">
+                        <div class="text-5xl font-bold mb-4">100%</div>
+                        <h4 class="text-xl font-bold mb-2">University Acceptance</h4>
+                        <p class="text-blue-200">All 2023 graduates accepted to universities</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Facilities -->
+        <section id="facilities" class="mb-16 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Academic Facilities</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">State-of-the-art facilities that support innovative learning and research</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Science Laboratory" 
+                             class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Advanced Science Laboratories</h3>
+                        <p class="text-gray-600 mb-4">Fully-equipped labs for physics, chemistry, and biology with modern equipment for practical experiments and research projects.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-flask mr-2"></i>
+                            <span>Capacity: 30 students per lab</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Computer Lab" 
+                             class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Technology & Computer Labs</h3>
+                        <p class="text-gray-600 mb-4">Modern computer labs with high-speed internet, programming software, and robotics equipment for digital literacy and coding education.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-desktop mr-2"></i>
+                            <span>1:1 Student-Computer Ratio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Support -->
+        <section class="fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Academic Support Services</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Comprehensive support systems to ensure every student achieves their academic potential</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-chalkboard-teacher text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Tutoring Center</h3>
+                    <p class="text-gray-600">Daily after-school tutoring sessions with subject specialists for individual and small group assistance.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-600">
+                    <div class="text-green-600 mb-4">
+                        <i class="fas fa-book-open text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Research Library</h3>
+                    <p class="text-gray-600">Extensive collection of academic resources, digital databases, and quiet study spaces for research and study.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-user-graduate text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">University Counseling</h3>
+                    <p class="text-gray-600">Dedicated guidance for university applications, scholarship opportunities, and career pathway planning.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer class="school-color-primary text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row justify-between mb-12">
+                <!-- School Info -->
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <div class="text-2xl font-bold mb-4">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        Bright Future
+                    </div>
+                    <p class="text-blue-200 mb-6">Providing quality education since 1995. Our mission is to prepare students for a successful future through academic excellence and character development.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 hover:bg-blue-900 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Home</a></li>
+                        <li><a href="about.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> About Us</a></li>
+                        <li><a href="academics.html" class="text-yellow-300 font-semibold"><i class="fas fa-chevron-right text-xs mr-2"></i> Academics</a></li>
+                        <li><a href="admissions.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Admissions</a></li>
+                        <li><a href="contact.html" class="text-blue-200 hover:text-yellow-300 transition duration-300"><i class="fas fa-chevron-right text-xs mr-2"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="lg:w-1/4 mb-10 lg:mb-0">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Contact Us</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">123 Education Avenue, Knowledge City, KC 10001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">(123) 456-7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">info@brightfutureschool.edu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-yellow-500 mt-1 mr-3"></i>
+                            <span class="text-blue-200">Mon-Fri: 8:00 AM - 5:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div class="lg:w-1/4">
+                    <h3 class="text-xl font-bold mb-6 border-l-4 border-yellow-500 pl-3">Stay Updated</h3>
+                    <p class="text-blue-200 mb-4">Subscribe to our newsletter to receive updates on school events, academic news, and more.</p>
+                    <form class="space-y-4" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" class="w-full p-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg w-full transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p class="text-sm text-blue-300 mt-4">By subscribing, you agree to our Privacy Policy.</p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-blue-800 pt-6 text-center">
+                <p class="text-blue-300">&copy; 2023 Bright Future Secondary School. All rights reserved.</p>
+                <div class="flex justify-center mt-4 space-x-6 text-sm text-blue-300">
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Terms of Service</a>
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Cookie Policy</a>
+                    <a href="#" class="hover:text-yellow-300 transition duration-300">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
